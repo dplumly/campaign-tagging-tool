@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title></title>
+
+	<!-- <css> -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/grid.css">
+	<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/modernizr-minified.js"></script>
+</head>
+
+<body>
+	<div id="container">
+		<div id="card">
+			<div id="info">
+				<h1>Tool to create campaign tagged URLs</h1>
+			</div>
+			<form action="/form" autocomplete="off">
+				<label>Base URL</label><br>
+				<input type="text" name="url" placeholder="https://www.example.com"><br>
+
+				<label>Campaign Number</label><br>
+				<input type="text" name="campaignNumber" placeholder="123456"><br>
+			</form>
+
+			<button onclick="generateURL()">Generate</button>
+			<div id="generated-link">
+				<h2>Your tagged URL:</h2>
+				<div id="generated-link-bg">
+					<h4 id="taggedURL"></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function generateURL() {
+			var url = document.getElementsByName('url')[0].value;
+			var campaignNumber = document.getElementsByName('campaignNumber')[0].value;
+
+			var result = url.concat("/utm_campaign=" + campaignNumber);
+			document.getElementById("taggedURL").innerHTML = result;
+		}
+	</script>
+</body>
+
+</html>

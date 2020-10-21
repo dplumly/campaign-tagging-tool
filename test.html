@@ -1,0 +1,62 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <div id="container">
+        <form action="" method="get">
+            <label>Base URL</label>
+            <input type="text" name="url"><br />
+            <label>Campaign Number</label>
+            <input type="text" name="campaignNumber"><br />
+        </form>
+
+        <button onclick="generateURL()">Generate</button>
+        <h2 id="taggedURL"></h2>
+    </div>
+
+    <script>
+        function generateURL() {
+            var url = document.getElementsByName('url')[0].value;
+            var campaignNumber = document.getElementsByName('campaignNumber')[0].value;
+
+            var result = url.concat(campaignNumber);
+            document.getElementById("taggedURL").innerHTML = result;
+        }
+    </script>
+
+
+
+
+    <!-- 
+    <script type="text/javascript">
+        function concatenate(/*String*/string_one, /*String*/string_two, /*boolean*/with_space) {
+            if (with_space === true) {
+                return string_one + ' ' + string_two;
+            }
+            else {
+                return string_one + string_two;
+            }
+        }
+        function join_names() {
+            var url = document.getElementsByName('url')[0].value;
+            var campaignNumber = document.getElementsByName('campaignNumber')[0].value;
+            var input_name_full = document.getElementsByName('name_full')[0];
+            var var_name_full = concatenate(url, campaignNumber);
+            input_name_full.value = var_name_full;
+        }
+    </script> -->
+</body>
+
+</html>
+
+<!-- 
+    <form action="" method="get">
+        <label>Base URL</label>
+        <input type="text" name="url" oninput="join_names();" onpaste="join_names();" /><br />
+        <label>Campaign Number</label>
+        <input type="text" name="campaignNumber" oninput="join_names();" onpaste="join_names();" /><br />
+        <input type="text" name="name_full" placeholder="Full Name" /><br />
+        <input type="submit" onclick="join_names();" />
+    </form> -->
