@@ -24,33 +24,62 @@
 			<div id="info">
 				<h1>Tool to create campaign tagged URLs</h1>
 			</div>
-			<form action="/form" autocomplete="off">
+
+			<!-- Form input for URL-->
+			<form id="form" action="/form" autocomplete="off">
 				<label>Base URL</label><br>
-				<input type="text" name="url" placeholder="https://www.example.com"><br>
+				<input type="text" name="url" placeholder="https://www.example.com" oninput="baseURL()"><br>
 
 				<label>Campaign Number</label><br>
-				<input type="text" name="campaignNumber" placeholder="123456"><br>
+				<input type="text" name="campaignNumber" placeholder="123456" oninput="utm_campaign()"><br>
+				<br>
 			</form>
 
-			<button onclick="generateURL()">Generate</button>
+			<!-- button to clear form and generated link-->
+			<button onclick="resetText();" value="Reset form">Reset</button>
+
 			<div id="generated-link">
 				<h2>Your tagged URL:</h2>
 				<div id="generated-link-bg">
-					<h4 id="taggedURL"></h4>
+					<h4 class="test" id="baseURL">
+						<h4 class="test" id="utm_campaign"></h4>
+					</h4>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<script>
-		function generateURL() {
-			var url = document.getElementsByName('url')[0].value;
-			var campaignNumber = document.getElementsByName('campaignNumber')[0].value;
+	<script src="js/app.js"></script>
 
-			var result = url.concat("/utm_campaign=" + campaignNumber);
-			document.getElementById("taggedURL").innerHTML = result;
+
+
+	<!-- <script>
+		function baseURL() {
+			let url = document.getElementsByName('url')[0].value;
+			document.getElementById('baseURL').innerHTML = url;
 		}
-	</script>
+
+		function utm_campaign() {
+			let campaignNumber = document.getElementsByName('utm_campaign')[0].value;
+			let utm_campaign = '/utm_campaign=' + campaignNumber;
+
+			document.getElementById('utm_campaign').innerHTML = utm_campaign;
+		}
+
+
+		// reset form functions
+		let reset = reset => { document.getElementById('form').reset(); }
+		let resetURL = resetURL => { document.getElementById('baseURL').innerHTML = ' '; }
+		let resetUtmCampaign = resetUtmCampaign => { document.getElementById('utm_campaign').innerHTML = ' '; }
+
+		// fuction to reset all forms
+		function resetText() {
+			reset();
+			resetURL();
+			resetUtmCampaign();
+		}
+
+	</script> -->
 </body>
 
 </html>
