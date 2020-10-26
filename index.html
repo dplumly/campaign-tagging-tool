@@ -33,6 +33,14 @@
 				<label>Campaign Number</label><br>
 				<input type="text" name="campaignNumber" placeholder="123456" oninput="utm_campaign()"><br>
 				<br>
+
+				<label>Source</label><br>
+				<input type="text" name="source" placeholder="twitter" oninput="utm_source()"><br>
+				<br>
+
+				<label>Medium</label><br>
+				<input type="text" name="medium" placeholder="search" oninput="utm_medium()"><br>
+				<br>
 			</form>
 
 			<!-- button to clear form and generated link-->
@@ -41,8 +49,13 @@
 			<div id="generated-link">
 				<h2>Your tagged URL:</h2>
 				<div id="generated-link-bg">
-					<h4 class="test" id="baseURL">
-						<h4 class="test" id="utm_campaign"></h4>
+					<h4 id="baseURL">
+						<h4 id="utm_campaign">
+							<h4 id="utm_source">
+								<h4 id="utm_medium">
+								</h4>
+							</h4>
+						</h4>
 					</h4>
 				</div>
 			</div>
