@@ -38,6 +38,10 @@ p  { font-size: .75em; 	}
 
 #info { margin: 50px 0; }
 
+.label-header {
+    color: #0aaff6;
+    font-size: 1.2rem;
+}
 label {
     color: #757577;
     font-family: 'Karla', sans-serif;
@@ -45,8 +49,32 @@ label {
     letter-spacing: .5px;
 }
 
-input {
-    width: 600px;
+#cloudRunner{
+    margin: 10px 0 40px 0;
+}
+
+#cloudRunnerLang {
+    width: 20px;
+    position: relative;
+    top: 6px;
+    left: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* On mouse-over, add a grey background color */
+input#cloudRunnerLang:hover  {
+  background-color: #ccc;
+}
+
+input#cloudRunnerLang:hover input ~ .checkmark {
+  background-color: red;
+}
+
+
+
+.inputs {
+   width: 600px;
     height: 35px;
     margin: 10px 0 40px 0;
     background: #343436 !important;

@@ -27,34 +27,32 @@
 
 			<!-- Form input for URL-->
 			<form id="form" action="/form" autocomplete="off">
-				<label>Base URL</label><br>
-				<input type="text" name="url" placeholder="https://www.example.com" oninput="baseURL()"><br>
+				<label class="label-header">Base url</label><br>
+				<input class="inputs" type="text" name="url" placeholder="https://www.example.com"
+					oninput="baseURL()"><br>
 
-				<label>Campaign Number</label><br>
-				<input type="text" name="campaignNumber" placeholder="123456" oninput="utm_campaign()"><br>
-				<br>
+				<label class="label-header">Campaign Number</label><br>
+				<input class="inputs" type="text" name="campaignNumber" placeholder="123456"
+					oninput="utm_campaign()"><br>
 
-				<label>Source</label><br>
-				<input type="text" name="source" placeholder="twitter" oninput="utm_source()"><br>
-				<br>
-
-				<label>Medium</label><br>
-				<input type="text" name="medium" placeholder="search" oninput="utm_medium()"><br>
-				<br>
+				<div id="cloudRunner">
+					<label class="label-header">Check if Cloud Runner with Language:</label>
+					<input type="checkbox" id="cloudRunnerLang" onclick="utm_campaign()">
+					<br>
+					<br>
+					<label>e.g. https://cloudandairunner.com/?lang=es</label>
+				</div>
 			</form>
 
 			<!-- button to clear form and generated link-->
-			<button onclick="resetText();" value="Reset form">Reset</button>
+			<button onclick="resetText()" value="Reset form">Reset</button>
+
 
 			<div id="generated-link">
-				<h2>Your tagged URL:</h2>
+				<h2>Your tagged url:</h2>
 				<div id="generated-link-bg">
-					<h4 id="baseURL">
-						<h4 id="utm_campaign">
-							<h4 id="utm_source">
-								<h4 id="utm_medium">
-								</h4>
-							</h4>
+					<h4 class="copyMe" id="baseURL">
+						<h4 class="copyMe" id="utm_campaign">
 						</h4>
 					</h4>
 				</div>
